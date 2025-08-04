@@ -9,7 +9,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 
 # Setup Gemini API
-os.environ["GEMINI_API_KEY"] = 'AIzaSyA1TzXYCxBnJzIK52jQlyBPKXgbNMBM8bE'
+os.environ["GEMINI_API_KEY"] = '#your-api-key'
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 # Streamlit UI
@@ -69,3 +69,4 @@ if uploaded_file:
         model = genai.GenerativeModel("models/gemini-1.5-flash-latest")
         response = model.generate_content(f"Context:\n{context}\n\nQuestion:\n{query}")
         st.markdown(f"**Answer:** {response.text}")
+
